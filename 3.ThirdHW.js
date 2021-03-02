@@ -1,28 +1,28 @@
 // Создадим шесть переменных, в каждой из которых будет один из восьми изученных типов данных. Выводим их значение в alert. Выводим их также в консоль.
 
 let num = 54; // Числовой
-alert(num);
+alert(typeof num);
 
-let BigInt = Math.pow(72, 22); // Большие числа
-alert(BigInt);
+let bigNum = 10n; // Большие числа
+alert(typeof bigNum);
 
 let string = 'Hello, JavaScript!'; // Строка
-alert(string);
+alert(typeof string);
 
 let bool = 2 > 10; // Логический
-alert(bool);
+alert(typeof bool);
 
 let sum; // undefined
-alert(sum);
+alert(typeof sum);
 
 let mass = ['level', 1, 2, 3, 4]; // Объекты
-alert(object);
+alert(typeof mass);
 
 // Выводим окно prompt с вопросом о вашем возрасте. В зависимости от ответа выводим alert с текстом “поздравляем, вам n полных лет”, где вместо n надо подставить введенное вами значение. Сделать дополнительно проверку на совершенолетие и выводим в окне alert утверждение совершеннолетний пользователь или нет.
 
 let age = +prompt('Сколько вам лет?', '');
 alert(`Поздравляем, Вам ${age} полных лет!`);
-if (age > 18) {
+if (age >= 18) {
     alert(`Кстати, вы совершеннолетний!`);
 } else { alert(`Вы еще не достигли совершеннолетия!`)}
 
@@ -46,12 +46,16 @@ console.log(sum);
 //     {name: ‘Sasha’, age: 29} ]. 
 // Написать скрипт, который будет на выходе отдавать два массива. Первый с совершеннолетними пользователями, второй с несовершеннолетними.
 
-// var arr = [
-//   {name: ‘Ivan’, age: 18}, 
-//   {name: ‘Petr’, age: 12}, 
-//   {name: ‘Sidor’, age: 25}, 
-//   {name: ‘Pavel’, age: 24}, 
-//   {name: ‘Sasha’, age: 29} ]
+let arr = [ {name: 'Ivan', age: 18}, 
+            {name: 'Petr', age: 12}, 
+            {name: 'Sidor', age: 25}, 
+            {name: 'Pavel', age: 24}, 
+            {name: 'Sasha', age: 29}];
 
-//   let arr1 = arr.slice[{age >= 18}];
-//   let arr2 = arr.slice[{age < 18}];
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i].age < 18) {
+    arr.splice(i,1);
+    i--;
+  }
+};
+console.log(arr);
