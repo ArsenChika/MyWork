@@ -64,12 +64,12 @@ function avg() {
 function words (n = 0) {
     let remainder1 = n % 10;
     let remainder2 = n % 100;
-    if (remainder1 === 1 && remainder2 !== 11) {
-        alert(n + ' товар');
-    } else if ((remainder1 === 2 || remainder1 === 3 || remainder1 === 4) || (remainder2 !== 12 || remainder2 !== 13 || remainder2 !== 14)) {
-        alert(n + ' товара')
+    if (remainder1 === 1 && remainder2 != 11) {
+        return(n + ' товар');
+    } else if ((remainder1 === 2 || remainder1 === 3 || remainder1 === 4) && (remainder2 != 12 && remainder2 != 13 && remainder2 != 14)) {
+        return(n + ' товара')
     } else {
-        alert (n + ' товаров')
+        return(n + ' товаров')
     }
 }
  
